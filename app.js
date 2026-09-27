@@ -5,13 +5,13 @@
    ============================================================ */
 
 const STORAGE_KEY = "flora-quiz-progress-v1";
+const MODE_KEY = "flora-quiz-answermode-v1";
 const QUESTIONS_PER_ROUND = 10;
 
 const state = {
   view: "home",
   mode: null,          // 'reto' | 'repas'
   pool: [],            // species used in the current round
-  order: [],           // shuffled indices into pool
   current: 0,
   score: 0,
   streak: 0,
@@ -33,6 +33,14 @@ function saveProgress() {
 }
 let progress = loadProgress();
 
+// answerMode: 'common' (nom en català) | 'sci' (nom científic)
+let answerMode = localStorage.getItem(MODE_KEY) || "common";
+function setAnswerMode(mode) {
+  answerMode = mode;
+  localStorage.setItem(MODE_KEY, mode);
+}
+function labelFor(sp) { return answerMode === "sci" ? sp.sci : sp.common; }
+
 /* ---------- helpers ---------- */
 function shuffle(arr) {
   const a = arr.slice();
@@ -46,6 +54,8 @@ function sample(arr, n) {
   return shuffle(arr).slice(0, n);
 }
 function keyFor(sp) { return sp.sci; }
+function firstImage(sp) { return sp.images[0]; }
+function randomImage(sp) { return sp.images[Math.floor(Math.random() * sp.images.length)]; }
 function showToast(msg) {
   const t = document.getElementById("toast");
   t.textContent = msg;
@@ -92,7 +102,7 @@ function makeQuestion(correctSp) {
   const distractorsPool = SPECIES_DATA.filter((s) => s.sci !== correctSp.sci);
   const distractors = sample(distractorsPool, 3);
   const options = shuffle([correctSp, ...distractors]);
-  return { correctSp, options };
+  return { correctSp, options, image: randomImage(correctSp) };
 }
 
 /* ---------- rendering ---------- */
@@ -124,6 +134,14 @@ function renderHome() {
       <p>Practica amb fotos reals i endevina quina planta és. Quatre opcions, feedback immediat i repàs de les que et costen més.</p>
     </section>
 
+    <div class="filters-panel">
+      <h4>Tipus de test</h4>
+      <div class="chip-row" id="answerModeChips">
+        <button class="chip ${answerMode === "common" ? "active" : ""}" data-answer-mode="common">🇨🇦 Noms en català</button>
+        <button class="chip ${answerMode === "sci" ? "active" : ""}" data-answer-mode="sci">🔬 Noms científics</button>
+      </div>
+    </div>
+
     <div class="mode-grid">
       <button class="mode-card reto" data-start="reto">
         <div class="mode-icon">🎯</div>
@@ -147,12 +165,19 @@ function renderHome() {
       <h4>Consell</h4>
       <p style="margin:0;color:var(--ink-soft);font-size:.88rem;line-height:1.5;">
         Fes un cop d'ull a la pestanya <strong>Fitxes</strong> per repassar totes les espècies amb foto i descripció abans de jugar,
-        i mira el teu <strong>Progrés</strong> per veure quines et costen més.
+        i mira el teu <strong>Progrés</strong> per veure quines et costen més. Durant el joc pots prémer
+        <strong>"Veure totes les fotos"</strong> per comparar diferents exemplars de la mateixa espècie.
       </p>
     </div>
   `;
   main.querySelectorAll("[data-start]").forEach((btn) => {
     btn.addEventListener("click", () => startRound(btn.dataset.start));
+  });
+  main.querySelectorAll("[data-answer-mode]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      setAnswerMode(btn.dataset.answerMode);
+      renderHome();
+    });
   });
 }
 
@@ -194,8 +219,8 @@ function renderQuiz() {
     </div>
 
     <div class="photo-card">
-      <img src="${q.correctSp.image}" alt="Fotografia de la planta a endevinar" loading="eager" />
-      <span class="zoom-hint">Fixa't en fulles, flors i fruits</span>
+      <img src="${q.image}" alt="Fotografia de la planta a endevinar" loading="eager" id="quizPhoto" />
+      ${q.correctSp.images.length > 1 ? `<button class="gallery-btn" id="galleryBtn">📷 Veure totes les fotos (${q.correctSp.images.length})</button>` : ""}
     </div>
 
     <p class="question-title">Quina planta és aquesta?</p>
@@ -211,12 +236,18 @@ function renderQuiz() {
     }
   });
 
+  const galleryBtn = document.getElementById("galleryBtn");
+  if (galleryBtn) {
+    galleryBtn.addEventListener("click", () => openGallery(q.correctSp, { hideNames: true }));
+  }
+
   const letters = ["A", "B", "C", "D"];
   const grid = document.getElementById("optionsGrid");
   q.options.forEach((opt, i) => {
     const btn = document.createElement("button");
     btn.className = "opt-btn";
-    btn.innerHTML = `<span class="letter">${letters[i]}</span><span>${opt.common}</span>`;
+    btn.dataset.sci = opt.sci;
+    btn.innerHTML = `<span class="letter">${letters[i]}</span><span>${labelFor(opt)}</span>`;
     btn.addEventListener("click", () => handleAnswer(opt, btn));
     grid.appendChild(btn);
   });
@@ -247,8 +278,7 @@ function handleAnswer(chosen, btnEl) {
 
   document.querySelectorAll(".opt-btn").forEach((b) => {
     b.disabled = true;
-    const label = b.querySelector("span:last-child").textContent;
-    if (label === q.correctSp.common) b.classList.add("correct");
+    if (b.dataset.sci === q.correctSp.sci) b.classList.add("correct");
     else if (b === btnEl) b.classList.add("wrong");
     else b.classList.add("dim");
   });
@@ -259,10 +289,13 @@ function handleAnswer(chosen, btnEl) {
     <div class="fb-title">${isCorrect ? "✅ Correcte!" : "❌ No era aquesta"} — ${q.correctSp.common}</div>
     <div class="fb-sci">${q.correctSp.sci}</div>
     <p class="fb-desc">${q.correctSp.description || "Sense descripció disponible."}</p>
+    ${q.correctSp.images.length > 1 ? `<button class="gallery-btn wide" id="fbGalleryBtn">📷 Veure totes les fotos (${q.correctSp.images.length})</button>` : ""}
     <button class="next-btn" id="nextBtn">${state.current + 1 < state.questions.length ? "Següent →" : "Veure resultats"}</button>
   `;
   document.getElementById("feedbackSlot").appendChild(panel);
   document.getElementById("nextBtn").addEventListener("click", nextQuestion);
+  const fbGalleryBtn = document.getElementById("fbGalleryBtn");
+  if (fbGalleryBtn) fbGalleryBtn.addEventListener("click", () => openGallery(q.correctSp));
   panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
@@ -309,13 +342,16 @@ function renderResult() {
       state.view = "quiz";
       render();
     });
+    main.querySelectorAll(".missed-row").forEach((el) => {
+      el.addEventListener("click", () => openGallery(SPECIES_DATA.find((s) => s.sci === decodeURIComponent(el.dataset.sci))));
+    });
   }
 }
 
 function renderMissedList() {
   const rows = state.missed.map((sp) => `
-    <div class="missed-row">
-      <img src="${sp.image}" alt="" />
+    <div class="missed-row" data-sci="${encodeURIComponent(sp.sci)}">
+      <img src="${firstImage(sp)}" alt="" />
       <div>
         <div class="name">${sp.common}</div>
         <div class="sci">${sp.sci}</div>
@@ -352,10 +388,12 @@ function paintCards() {
     let dot = "";
     if (correct > 0 && wrong === 0) dot = `<span class="learned-dot" title="Ben apresa">✓</span>`;
     else if (wrong > correct) dot = `<span class="learned-dot struggle-dot" title="Et costa">!</span>`;
+    const countBadge = sp.images.length > 1 ? `<span class="img-count">📷 ${sp.images.length}</span>` : "";
     return `
       <div class="flash" data-sci="${encodeURIComponent(sp.sci)}">
         ${dot}
-        <img class="thumb" src="${sp.image}" alt="${sp.common}" loading="lazy" />
+        <img class="thumb" src="${firstImage(sp)}" alt="${sp.common}" loading="lazy" />
+        ${countBadge}
         <div class="meta">
           <div class="common">${sp.common}</div>
           <div class="sci">${sp.sci}</div>
@@ -365,39 +403,61 @@ function paintCards() {
   }).join("") || `<p class="empty-hint">Cap resultat per "${studyFilter}".</p>`;
 
   grid.querySelectorAll(".flash").forEach((el) => {
-    el.addEventListener("click", () => openCardModal(decodeURIComponent(el.dataset.sci)));
+    el.addEventListener("click", () => openGallery(SPECIES_DATA.find((s) => s.sci === decodeURIComponent(el.dataset.sci))));
   });
 }
-function openCardModal(sci) {
-  const sp = SPECIES_DATA.find((s) => s.sci === sci);
+
+/* ---------- photo gallery / card modal ---------- */
+function openGallery(sp, opts) {
   if (!sp) return;
+  const hideNames = !!(opts && opts.hideNames);
+  let idx = 0;
   const backdrop = document.createElement("div");
   backdrop.className = "modal-backdrop";
-  backdrop.innerHTML = `
-    <div class="modal-card">
-      <button class="modal-close" aria-label="Tancar">✕</button>
-      <img src="${sp.image}" alt="${sp.common}" />
-      <div class="modal-body">
-        <h3>${sp.common}</h3>
-        <span class="sci">${sp.sci}</span>
-        <p>${sp.description || "Sense descripció disponible."}</p>
+
+  function paint() {
+    const dots = sp.images.map((_, i) => `<span class="dot ${i === idx ? "active" : ""}" data-dot="${i}"></span>`).join("");
+    backdrop.innerHTML = `
+      <div class="modal-card">
+        <button class="modal-close" aria-label="Tancar">✕</button>
+        <div class="carousel">
+          ${sp.images.length > 1 ? `<button class="car-nav prev" aria-label="Foto anterior">‹</button>` : ""}
+          <img src="${sp.images[idx]}" alt="${hideNames ? "Fotografia de la planta" : sp.common}" />
+          ${sp.images.length > 1 ? `<button class="car-nav next" aria-label="Foto següent">›</button>` : ""}
+        </div>
+        ${sp.images.length > 1 ? `<div class="dots">${dots}</div>` : ""}
+        <div class="modal-body">
+          ${hideNames
+            ? `<p class="hint-text">Compara els diferents exemplars per fixar-te en els detalls que no canvien: forma de la fulla, flor, fruit o escorça.</p>`
+            : `<h3>${sp.common}</h3><span class="sci">${sp.sci}</span><p>${sp.description || "Sense descripció disponible."}</p>`}
+        </div>
       </div>
-    </div>
-  `;
-  document.body.appendChild(backdrop);
-  const close = () => backdrop.remove();
+    `;
+    backdrop.querySelector(".modal-close").addEventListener("click", close);
+    if (sp.images.length > 1) {
+      backdrop.querySelector(".prev").addEventListener("click", () => { idx = (idx - 1 + sp.images.length) % sp.images.length; paint(); });
+      backdrop.querySelector(".next").addEventListener("click", () => { idx = (idx + 1) % sp.images.length; paint(); });
+      backdrop.querySelectorAll(".dot").forEach((d) => {
+        d.addEventListener("click", () => { idx = Number(d.dataset.dot); paint(); });
+      });
+    }
+  }
+  function close() { backdrop.remove(); document.removeEventListener("keydown", onKey); }
+  function onKey(e) {
+    if (e.key === "Escape") close();
+    else if (e.key === "ArrowRight" && sp.images.length > 1) { idx = (idx + 1) % sp.images.length; paint(); }
+    else if (e.key === "ArrowLeft" && sp.images.length > 1) { idx = (idx - 1 + sp.images.length) % sp.images.length; paint(); }
+  }
+  document.addEventListener("keydown", onKey);
   backdrop.addEventListener("click", (e) => { if (e.target === backdrop) close(); });
-  backdrop.querySelector(".modal-close").addEventListener("click", close);
+  paint();
+  document.body.appendChild(backdrop);
 }
 
 /* ---------- stats ---------- */
 function renderStats() {
   const total = SPECIES_DATA.length;
   const seen = Object.keys(progress.seen).length;
-  const learned = SPECIES_DATA.filter((sp) => {
-    const k = keyFor(sp);
-    return (progress.correct[k] || 0) > 0 && (progress.correct[k] || 0) >= (progress.wrong[k] || 0);
-  }).length;
   const acc = progress.totalAnswered ? Math.round((progress.totalCorrect / progress.totalAnswered) * 100) : 0;
 
   const struggling = SPECIES_DATA
@@ -419,7 +479,7 @@ function renderStats() {
         ${struggling.map(({ sp }) => `
           <div class="flash" data-sci="${encodeURIComponent(sp.sci)}">
             <span class="learned-dot struggle-dot">!</span>
-            <img class="thumb" src="${sp.image}" alt="${sp.common}" loading="lazy" />
+            <img class="thumb" src="${firstImage(sp)}" alt="${sp.common}" loading="lazy" />
             <div class="meta"><div class="common">${sp.common}</div><div class="sci">${sp.sci}</div></div>
           </div>
         `).join("")}
@@ -431,7 +491,7 @@ function renderStats() {
       </div>` : ""}
   `;
   main.querySelectorAll(".flash").forEach((el) => {
-    el.addEventListener("click", () => openCardModal(decodeURIComponent(el.dataset.sci)));
+    el.addEventListener("click", () => openGallery(SPECIES_DATA.find((s) => s.sci === decodeURIComponent(el.dataset.sci))));
   });
   const resetBtn = document.getElementById("resetProgress");
   if (resetBtn) {
