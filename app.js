@@ -6,7 +6,9 @@
 
 const STORAGE_KEY = "flora-quiz-progress-v1";
 const MODE_KEY = "flora-quiz-answermode-v1";
-const QUESTIONS_PER_ROUND = 10;
+const SIZE_KEY = "flora-quiz-roundsize-v1";
+const ROUND_SIZE_OPTIONS = [10, 20, 40, "all"];
+const DEFAULT_ROUND_SIZE = 10;
 
 const state = {
   view: "home",
@@ -40,6 +42,17 @@ function setAnswerMode(mode) {
   localStorage.setItem(MODE_KEY, mode);
 }
 function labelFor(sp) { return answerMode === "sci" ? sp.sci : sp.common; }
+
+// roundSize: number of questions per round, or "all" for every species
+let roundSize = localStorage.getItem(SIZE_KEY) || DEFAULT_ROUND_SIZE;
+if (roundSize !== "all") roundSize = Number(roundSize) || DEFAULT_ROUND_SIZE;
+function setRoundSize(val) {
+  roundSize = val === "all" ? "all" : Number(val);
+  localStorage.setItem(SIZE_KEY, roundSize);
+}
+function resolvedRoundSize() {
+  return roundSize === "all" ? SPECIES_DATA.length : Math.min(roundSize, SPECIES_DATA.length);
+}
 
 /* ---------- helpers ---------- */
 function shuffle(arr) {
@@ -142,12 +155,21 @@ function renderHome() {
       </div>
     </div>
 
+    <div class="filters-panel">
+      <h4>Nombre de preguntes</h4>
+      <div class="chip-row" id="roundSizeChips">
+        ${ROUND_SIZE_OPTIONS.map((n) => `
+          <button class="chip ${roundSize === n ? "active" : ""}" data-round-size="${n}">${n === "all" ? `Totes (${SPECIES_DATA.length})` : n}</button>
+        `).join("")}
+      </div>
+    </div>
+
     <div class="mode-grid">
       <button class="mode-card reto" data-start="reto">
         <div class="mode-icon">🎯</div>
         <div class="mode-body">
           <h3>Repte ràpid</h3>
-          <p>${QUESTIONS_PER_ROUND} preguntes a l'atzar de tot el catàleg.</p>
+          <p>${resolvedRoundSize()} preguntes a l'atzar de tot el catàleg, sense repetir.</p>
           <span class="badge-count">${SPECIES_DATA.length} espècies disponibles</span>
         </div>
       </button>
@@ -179,6 +201,12 @@ function renderHome() {
       renderHome();
     });
   });
+  main.querySelectorAll("[data-round-size]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      setRoundSize(btn.dataset.roundSize);
+      renderHome();
+    });
+  });
 }
 
 function startRound(mode) {
@@ -189,11 +217,12 @@ function startRound(mode) {
   state.current = 0;
   state.answered = false;
 
+  const size = resolvedRoundSize();
   if (mode === "reto") {
-    state.pool = sample(SPECIES_DATA, Math.min(QUESTIONS_PER_ROUND, SPECIES_DATA.length));
+    state.pool = sample(SPECIES_DATA, size);
   } else {
     const weighted = buildWeightedPool();
-    state.pool = pickWeighted(weighted, Math.min(QUESTIONS_PER_ROUND, SPECIES_DATA.length));
+    state.pool = pickWeighted(weighted, size);
   }
   state.questions = state.pool.map(makeQuestion);
   state.view = "quiz";
@@ -415,6 +444,9 @@ function openGallery(sp, opts) {
   const backdrop = document.createElement("div");
   backdrop.className = "modal-backdrop";
 
+  // pre-warm the browser cache for every photo of this species so switching is instant
+  sp.images.forEach((src) => { const pre = new Image(); pre.src = src; });
+
   function paint() {
     const dots = sp.images.map((_, i) => `<span class="dot ${i === idx ? "active" : ""}" data-dot="${i}"></span>`).join("");
     backdrop.innerHTML = `
@@ -422,7 +454,10 @@ function openGallery(sp, opts) {
         <button class="modal-close" aria-label="Tancar">✕</button>
         <div class="carousel">
           ${sp.images.length > 1 ? `<button class="car-nav prev" aria-label="Foto anterior">‹</button>` : ""}
-          <img src="${sp.images[idx]}" alt="${hideNames ? "Fotografia de la planta" : sp.common}" />
+          <div class="img-wrap">
+            <div class="img-spinner"></div>
+            <img class="gal-img" src="${sp.images[idx]}" alt="${hideNames ? "Fotografia de la planta" : sp.common}" loading="eager" decoding="async" />
+          </div>
           ${sp.images.length > 1 ? `<button class="car-nav next" aria-label="Foto següent">›</button>` : ""}
         </div>
         ${sp.images.length > 1 ? `<div class="dots">${dots}</div>` : ""}
@@ -433,6 +468,14 @@ function openGallery(sp, opts) {
         </div>
       </div>
     `;
+    const imgEl = backdrop.querySelector(".gal-img");
+    const wrapEl = backdrop.querySelector(".img-wrap");
+    const markLoaded = () => wrapEl.classList.add("loaded");
+    if (imgEl.complete && imgEl.naturalWidth > 0) markLoaded();
+    else {
+      imgEl.addEventListener("load", markLoaded);
+      imgEl.addEventListener("error", () => wrapEl.classList.add("error"));
+    }
     backdrop.querySelector(".modal-close").addEventListener("click", close);
     if (sp.images.length > 1) {
       backdrop.querySelector(".prev").addEventListener("click", () => { idx = (idx - 1 + sp.images.length) % sp.images.length; paint(); });
