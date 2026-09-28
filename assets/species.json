@@ -4,929 +4,1285 @@
     "sci": "Arbutus unedo",
     "description": "Arbust d’escorça bruna que es desprèn en petites làmines. Creix en màquies i alzinars poc densos.",
     "images": [
-      "p9_0.jpg",
-      "p9_1.jpg",
-      "p9_2.jpg",
-      "p9_3.jpg"
-    ]
+      "assets/img/p9_0.jpg",
+      "assets/img/p9_1.jpg",
+      "assets/img/p9_2.jpg",
+      "assets/img/p9_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Salat blanc",
     "sci": "Atriplex halimus",
     "description": "Planta d’un gris argentat. Contrades mediterrànies poc plujoses, en comunitats nitròfiles.",
     "images": [
-      "p10_0.jpg",
-      "p10_1.jpg",
-      "p10_2.jpg",
-      "p10_3.jpg",
-      "p10_4.jpg"
-    ]
+      "assets/img/p10_0.jpg",
+      "assets/img/p10_1.jpg",
+      "assets/img/p10_2.jpg",
+      "assets/img/p10_3.jpg",
+      "assets/img/p10_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Llistó",
     "sci": "Brachypodium ramosum",
     "description": "Gramínia de fulles caulinars dístiques, dominant en erms i prats secs de la regió mediterrània.",
     "images": [
-      "p11_0.jpg",
-      "p11_1.jpg",
-      "p11_2.jpg"
-    ]
+      "assets/img/p11_0.jpg",
+      "assets/img/p11_1.jpg",
+      "assets/img/p11_2.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Boix",
     "sci": "Buxus sempervirens",
     "description": "Arbust de fusta molt dura i fulles oposades. Creix en matollars i boscs amb preferència per substrats calcaris",
     "images": [
-      "p12_0.jpg",
-      "p12_1.jpg",
-      "p12_2.jpg",
-      "p12_3.jpg"
-    ]
+      "assets/img/p12_0.jpg",
+      "assets/img/p12_1.jpg",
+      "assets/img/p12_2.jpg",
+      "assets/img/p12_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Estepa blanca",
     "sci": "Cistus albidus",
     "description": "Fulles oposades i decussades, grises a ambdues superfícies, planta coberta de toment. Creix en garrigues i brolles.",
     "images": [
-      "p13_0.jpg",
-      "p13_1.jpg",
-      "p13_2.jpg",
-      "p13_3.jpg",
-      "p13_4.jpg"
-    ]
+      "assets/img/p13_0.jpg",
+      "assets/img/p13_1.jpg",
+      "assets/img/p13_2.jpg",
+      "assets/img/p13_3.jpg",
+      "assets/img/p13_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Matapoll",
     "sci": "Daphne gnidium",
     "description": "Fulles lanceolades i glabres. Fruit carnós vermell. Creix en garrigues i boscs clars.",
     "images": [
-      "p14_0.jpg",
-      "p14_1.jpg",
-      "p14_2.jpg",
-      "p14_3.jpg"
-    ]
+      "assets/img/p14_0.jpg",
+      "assets/img/p14_1.jpg",
+      "assets/img/p14_2.jpg",
+      "assets/img/p14_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Bruc boal",
     "sci": "Erica arborea",
     "description": "Flors blanques. Arbust molt ramificat i fulles linears. Creix en brolles de substrats àcids (o descarbonatats). Floreix a l’hivern.",
     "images": [
-      "p15_0.jpg",
-      "p15_1.jpg",
-      "p15_2.jpg",
-      "p15_3.jpg",
-      "p15_4.jpg"
-    ]
+      "assets/img/p15_0.jpg",
+      "assets/img/p15_1.jpg",
+      "assets/img/p15_2.jpg",
+      "assets/img/p15_3.jpg",
+      "assets/img/p15_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Bruc d’escombres",
     "sci": "Erica scoparia",
     "description": "Flors verdoses. Fulles linears. Creix en brolles de substrats àcids (o descarbonatats). Floreix de maig a juliol.",
     "images": [
-      "p16_0.jpg",
-      "p16_1.jpg",
-      "p16_2.jpg",
-      "p16_3.jpg"
-    ]
+      "assets/img/p16_0.jpg",
+      "assets/img/p16_1.jpg",
+      "assets/img/p16_2.jpg",
+      "assets/img/p16_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Argelaga",
     "sci": "Genista scorpius",
     "description": "Planta lleguminosa amb moltes espines. Mata d’un verd grisenc. Floració hivernal. Creix en erms i pastures seques arreu del territori.",
     "images": [
-      "p17_0.jpg",
-      "p17_1.jpg",
-      "p17_2.jpg",
-      "p17_3.jpg",
-      "p17_4.jpg"
-    ]
+      "assets/img/p17_0.jpg",
+      "assets/img/p17_1.jpg",
+      "assets/img/p17_2.jpg",
+      "assets/img/p17_3.jpg",
+      "assets/img/p17_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Esteperola",
     "sci": "Halimium sp.",
     "description": "Arbust llenyós, ramificat i gris. Cobert de pèls. Fulles oblongues. Creix en brolles sobre sòl. arenós.",
     "images": [
-      "p18_0.jpg",
-      "p18_1.jpg",
-      "p18_2.jpg",
-      "p18_3.jpg",
-      "p18_4.jpg"
-    ]
+      "assets/img/p18_0.jpg",
+      "assets/img/p18_1.jpg",
+      "assets/img/p18_2.jpg",
+      "assets/img/p18_3.jpg",
+      "assets/img/p18_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Ginebró",
     "sci": "Juniperus communis",
     "description": "Fulles aciculars amb una sola banda longitudinal blanca. Fruits madurs d’un blau fosc. Boscos clars i matollars.",
     "images": [
-      "p19_0.jpg",
-      "p19_1.jpg",
-      "p19_2.jpg"
-    ]
+      "assets/img/p19_0.jpg",
+      "assets/img/p19_1.jpg",
+      "assets/img/p19_2.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Càdec",
     "sci": "Juniperus oxycedrus",
     "description": "Fulles aciculars amb dues bandes longitudinal blanques a l’anvers. Fruits madurs rogencs. Garrigues i màquies litorals.",
     "images": [
-      "p20_0.jpg",
-      "p20_1.jpg",
-      "p20_2.jpg",
-      "p20_3.jpg"
-    ]
+      "assets/img/p20_0.jpg",
+      "assets/img/p20_1.jpg",
+      "assets/img/p20_2.jpg",
+      "assets/img/p20_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Espígol",
     "sci": "Lavandula sp.",
     "description": "Mates llenyoses de fulles oposades i decussades. Aromàtica. Inflorescència lilàcia en forma d’espiga. Creix en erms i brolles.",
     "images": [
-      "p21_0.jpg",
-      "p21_1.jpg",
-      "p21_2.jpg",
-      "p21_3.jpg",
-      "p21_4.jpg",
-      "p21_5.jpg"
-    ]
+      "assets/img/p21_0.jpg",
+      "assets/img/p21_1.jpg",
+      "assets/img/p21_2.jpg",
+      "assets/img/p21_3.jpg",
+      "assets/img/p21_4.jpg",
+      "assets/img/p21_5.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Ullastre, olivera",
     "sci": "Olea europea var. sylvestris",
     "description": "Escorça grisa, fulles oposades i coriàcies. Creix en màquies.",
     "images": [
-      "p22_0.jpg",
-      "p22_1.jpg",
-      "p22_2.jpg"
-    ]
+      "assets/img/p22_0.jpg",
+      "assets/img/p22_1.jpg",
+      "assets/img/p22_2.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Ruac",
     "sci": "Ononis tridentata",
     "description": "Lleguminosa de fulles trifoliolades, suculentes. Creix en brolles sobre substrats guixencs.",
     "images": [
-      "p23_0.jpg",
-      "p23_1.jpg",
-      "p23_2.jpg",
-      "p23_3.jpg",
-      "p23_4.jpg"
-    ]
+      "assets/img/p23_0.jpg",
+      "assets/img/p23_1.jpg",
+      "assets/img/p23_2.jpg",
+      "assets/img/p23_3.jpg",
+      "assets/img/p23_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Ginestó",
     "sci": "Osyris alba",
     "description": "Planta llenyosa. Fulles linears uninervades. Tiges verdes. Creix en garrigues i boscs clars.",
     "images": [
-      "p24_0.jpg",
-      "p24_1.jpg",
-      "p24_2.jpg",
-      "p24_3.jpg",
-      "p24_4.jpg"
-    ]
+      "assets/img/p24_0.jpg",
+      "assets/img/p24_1.jpg",
+      "assets/img/p24_2.jpg",
+      "assets/img/p24_3.jpg",
+      "assets/img/p24_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Aladern de fulla estreta",
     "sci": "Phillyrea angustifolia",
     "description": "Fulles oposades i linears/lanceolades. Escorça grisenca. Creix en màquies i garrigues.",
     "images": [
-      "p25_0.jpg",
-      "p25_1.jpg",
-      "p25_2.jpg",
-      "p25_3.jpg"
-    ]
+      "assets/img/p25_0.jpg",
+      "assets/img/p25_1.jpg",
+      "assets/img/p25_2.jpg",
+      "assets/img/p25_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Aladern fals",
     "sci": "Phillyrea media",
     "description": "Fulles oposades i ovades/lanceolades. Escorça grisenca. Capçada densa. Alzinars i màquies.",
     "images": [
-      "p26_0.jpg",
-      "p26_1.jpg",
-      "p26_2.jpg",
-      "p26_3.jpg"
-    ]
+      "assets/img/p26_0.jpg",
+      "assets/img/p26_1.jpg",
+      "assets/img/p26_2.jpg",
+      "assets/img/p26_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Llentiscle",
     "sci": "Pistacia lentiscus",
     "description": "FL (♂︎) Fulles paripinnades persistents. Fruit inicialment vermell, després negre. Creix en màquies i alzinars poc densos.",
     "images": [
-      "p27_0.jpg",
-      "p27_1.jpg",
-      "p27_2.jpg",
-      "p27_3.jpg",
-      "p27_4.jpg"
-    ]
+      "assets/img/p27_0.jpg",
+      "assets/img/p27_1.jpg",
+      "assets/img/p27_2.jpg",
+      "assets/img/p27_3.jpg",
+      "assets/img/p27_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Noguerola",
     "sci": "Pistacia terebinthus",
     "description": "FL (♂︎) Fulles imparipinnades caduques. Fruit inicialment vermell, després bru. Creix en alzinars poc densos i garrigues.",
     "images": [
-      "p28_0.jpg",
-      "p28_1.jpg",
-      "p28_2.jpg",
-      "p28_3.jpg",
-      "p28_4.jpg"
-    ]
+      "assets/img/p28_0.jpg",
+      "assets/img/p28_1.jpg",
+      "assets/img/p28_2.jpg",
+      "assets/img/p28_3.jpg",
+      "assets/img/p28_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Garric",
     "sci": "Quercus coccifera",
     "description": "Fulles verdes i glabres en ambdues cares. Garrigues i màquies, sovint dominant.",
     "images": [
-      "p29_0.jpg",
-      "p29_1.jpg",
-      "p29_2.jpg"
-    ]
+      "assets/img/p29_0.jpg",
+      "assets/img/p29_1.jpg",
+      "assets/img/p29_2.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Aladern",
     "sci": "Rhamnus alaternus",
     "description": "Fulles esparses amb el marge foliar dentat. Mata llenyosa. Creix en màquies i garrigues.",
     "images": [
-      "p30_0.jpg",
-      "p30_1.jpg",
-      "p30_2.jpg",
-      "p30_3.jpg"
-    ]
+      "assets/img/p30_0.jpg",
+      "assets/img/p30_1.jpg",
+      "assets/img/p30_2.jpg",
+      "assets/img/p30_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Arçot",
     "sci": "Rhamnus lycioides",
     "description": "Fulles esparses linears. Arbust molt espinós. Màquies i garrigues de caràcter meridional.",
     "images": [
-      "p31_0.jpg",
-      "p31_1.jpg",
-      "p31_2.jpg",
-      "p31_3.jpg"
-    ]
+      "assets/img/p31_0.jpg",
+      "assets/img/p31_1.jpg",
+      "assets/img/p31_2.jpg",
+      "assets/img/p31_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Romaní",
     "sci": "Rosmarinus officinalis",
     "description": "Aromàtica. Fulles tomentoses al revers, oposades i decussades. Flors zigomòrfiques. Creix en brolles i matollars, especialment en sòls carbonatats.",
     "images": [
-      "p32_0.jpg",
-      "p32_1.jpg",
-      "p32_2.jpg",
-      "p32_3.jpg",
-      "p32_4.jpg"
-    ]
+      "assets/img/p32_0.jpg",
+      "assets/img/p32_1.jpg",
+      "assets/img/p32_2.jpg",
+      "assets/img/p32_3.jpg",
+      "assets/img/p32_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Rogeta/Roja",
     "sci": "Rubia peregrina",
     "description": "Fulles verticil·lades, dentades. Creix en màquies i garrigues",
     "images": [
-      "p33_0.jpg",
-      "p33_1.jpg",
-      "p33_2.jpg",
-      "p33_3.jpg",
-      "p33_4.jpg"
-    ]
+      "assets/img/p33_0.jpg",
+      "assets/img/p33_1.jpg",
+      "assets/img/p33_2.jpg",
+      "assets/img/p33_3.jpg",
+      "assets/img/p33_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Esbarzer",
     "sci": "Rubus sp.",
     "description": "Fulles palmaticompostes o trifoliolades. Tiges impenetrables amb agullons (aculis). Forma bardisses.",
     "images": [
-      "p34_0.jpg",
-      "p34_1.jpg",
-      "p34_2.jpg",
-      "p34_3.jpg"
-    ]
+      "assets/img/p34_0.jpg",
+      "assets/img/p34_1.jpg",
+      "assets/img/p34_2.jpg",
+      "assets/img/p34_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Galzeran",
     "sci": "Ruscus aculeatus",
     "description": "Mata llenyosa amb flors i fruits sobre cladodis (tiges planes) amb aspecte de fulla coriàcia. Fruit carnós, una baia vermella. Alzinars.",
     "images": [
-      "p35_0.jpg",
-      "p35_1.jpg",
-      "p35_2.jpg"
-    ]
+      "assets/img/p35_0.jpg",
+      "assets/img/p35_1.jpg",
+      "assets/img/p35_2.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Farigola",
     "sci": "Thymus vulgaris",
     "description": "Planta aromàtica, llenyosa i ramificada. Fulles oposades i decussades. Matollars (timonedes).",
     "images": [
-      "p36_0.jpg",
-      "p36_1.jpg",
-      "p36_2.jpg",
-      "p36_3.jpg"
-    ]
+      "assets/img/p36_0.jpg",
+      "assets/img/p36_1.jpg",
+      "assets/img/p36_2.jpg",
+      "assets/img/p36_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Gatosa",
     "sci": "Ulex parviflorus",
     "description": "Arbust d’un verd viu. Densament espinós. Llegum comprimit i pilós. Creix en brolles dels terrenys secs a les litoral.",
     "images": [
-      "p37_0.jpg",
-      "p37_1.jpg",
-      "p37_2.jpg",
-      "p37_3.jpg"
-    ]
+      "assets/img/p37_0.jpg",
+      "assets/img/p37_1.jpg",
+      "assets/img/p37_2.jpg",
+      "assets/img/p37_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Marfull",
     "sci": "Viburnum tinus",
     "description": "Fulles simples, verdes i lluents; oposades. Inflorescència en forma d’umbel·la, flors blanques i fruits negres brillants. Alzinars i màquies.",
     "images": [
-      "p38_0.jpg",
-      "p38_1.jpg",
-      "p38_2.jpg",
-      "p38_3.jpg"
-    ]
+      "assets/img/p38_0.jpg",
+      "assets/img/p38_1.jpg",
+      "assets/img/p38_2.jpg",
+      "assets/img/p38_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Heura",
     "sci": "Hedera helix",
     "description": "Liana que s’enfila per mitjà d’arrels curtes fixadores. Fulles alternes, coriàcies. Fruit: baia esfèrica negra. Cobreix el sòl de boscs ombrívols i s’enfila per roques i troncs.",
     "images": [
-      "p39_0.jpg",
-      "p39_1.jpg",
-      "p39_2.jpg",
-      "p39_3.jpg"
-    ]
+      "assets/img/p39_0.jpg",
+      "assets/img/p39_1.jpg",
+      "assets/img/p39_2.jpg",
+      "assets/img/p39_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Arítjol",
     "sci": "Smilax aspera",
     "description": "Liana espinosa. Fulles de limbe cordiforme, pecíol que porta dos circells estipulars amb els quals s’enfila. Fruit: baia vermella (rarament negra). Creix en l’alzinar de contrades mediterrànies.",
     "images": [
-      "p40_0.jpg",
-      "p40_1.jpg",
-      "p40_2.jpg",
-      "p40_3.jpg"
-    ]
+      "assets/img/p40_0.jpg",
+      "assets/img/p40_1.jpg",
+      "assets/img/p40_2.jpg",
+      "assets/img/p40_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Avet",
     "sci": "Abies alba",
     "description": "Capçada cònica. Escorça llisa i blanquinosa. Fulles de verd bosc a l’anvers i amb dues bandes blanquinoses al revers. Pinyes erectes. Creix en obagues de l’estatge montà.",
     "images": [
-      "p41_0.jpg",
-      "p41_1.jpg",
-      "p41_2.jpg",
-      "p41_3.jpg",
-      "p41_4.jpg"
-    ]
+      "assets/img/p41_0.jpg",
+      "assets/img/p41_1.jpg",
+      "assets/img/p41_2.jpg",
+      "assets/img/p41_3.jpg",
+      "assets/img/p41_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Pi blanc",
     "sci": "Pinus halepensis",
     "description": "Enllaç a infografia dels pins autòctons peninsulars Fulles d’un verd groguenc. Escorça grisenca. Dominant a la regió mediterrània.",
     "images": [
-      "p42_0.jpg",
-      "p42_1.jpg",
-      "p42_2.jpg",
-      "p42_3.jpg",
-      "p42_4.jpg",
-      "p42_5.jpg"
-    ]
+      "assets/img/p42_0.jpg",
+      "assets/img/p42_1.jpg",
+      "assets/img/p42_2.jpg",
+      "assets/img/p42_3.jpg",
+      "assets/img/p42_4.jpg",
+      "assets/img/p42_5.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Pi negre",
     "sci": "Pinus uncinata",
     "description": "Fulles d’un verd negrós. Pinyes clarament asimètriques amb escudets basals prominents. Boscs a l’estatge subalpí.",
     "images": [
-      "p43_0.jpg",
-      "p43_1.jpg",
-      "p43_2.jpg",
-      "p43_3.jpg"
-    ]
+      "assets/img/p43_0.jpg",
+      "assets/img/p43_1.jpg",
+      "assets/img/p43_2.jpg",
+      "assets/img/p43_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Pi pinyer",
     "sci": "Pinus pinea",
     "description": "Pinyes amplament ovoides. Escorça d’un bru rogenc. Garrigues, erms i dunes fixades.",
     "images": [
-      "p44_0.jpg",
-      "p44_1.jpg",
-      "p44_2.jpg",
-      "p44_3.jpg",
-      "p44_4.jpg",
-      "p44_5.jpg"
-    ]
+      "assets/img/p44_0.jpg",
+      "assets/img/p44_1.jpg",
+      "assets/img/p44_2.jpg",
+      "assets/img/p44_3.jpg",
+      "assets/img/p44_4.jpg",
+      "assets/img/p44_5.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Pi roig",
     "sci": "Pinus sylvestris",
     "description": "Fulles d’un verd glauc. Arbre de tronc recte i capçada cònica. Escorça rogenca a la part superior. Boscs a l’estatge montà.",
     "images": [
-      "p45_0.jpg",
-      "p45_1.jpg",
-      "p45_2.jpg",
-      "p45_3.jpg",
-      "p45_4.jpg"
-    ]
+      "assets/img/p45_0.jpg",
+      "assets/img/p45_1.jpg",
+      "assets/img/p45_2.jpg",
+      "assets/img/p45_3.jpg",
+      "assets/img/p45_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Pinassa",
     "sci": "Pinus nigra",
     "description": "Fulles d’un verd intens. Pinyes d’un bru clar, brillants. Boscos a l’estatge montà en contrades de clima continental i substrat carbonatat.",
     "images": [
-      "p46_0.jpg",
-      "p46_1.jpg",
-      "p46_2.jpg",
-      "p46_3.jpg",
-      "p46_4.jpg"
-    ]
+      "assets/img/p46_0.jpg",
+      "assets/img/p46_1.jpg",
+      "assets/img/p46_2.jpg",
+      "assets/img/p46_3.jpg",
+      "assets/img/p46_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Pinastre",
     "sci": "Pinus pinaster",
     "description": "Pinyes grans i rogenques. Escorça gruixuda i fisurada. Fulles de verd intens. Boscs clars i brolles sobre substrats àcids.",
     "images": [
-      "p47_0.jpg",
-      "p47_1.jpg",
-      "p47_2.jpg",
-      "p47_3.jpg",
-      "p47_4.jpg"
-    ]
+      "assets/img/p47_0.jpg",
+      "assets/img/p47_1.jpg",
+      "assets/img/p47_2.jpg",
+      "assets/img/p47_3.jpg",
+      "assets/img/p47_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Teix",
     "sci": "Taxus baccata",
     "description": "Fusta rogenca. Fulles tòxiques, esparses, verd fosc a l’anvers i pàl·lides al revers. Creix en boscs ombrívols, sovint al peu de les roques, en substrats carbonatats.",
     "images": [
-      "p48_0.jpg",
-      "p48_1.jpg",
-      "p48_2.jpg",
-      "p48_3.jpg",
-      "p48_4.jpg"
-    ]
+      "assets/img/p48_0.jpg",
+      "assets/img/p48_1.jpg",
+      "assets/img/p48_2.jpg",
+      "assets/img/p48_3.jpg",
+      "assets/img/p48_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Seba",
     "sci": "Cymodea nodosa",
     "description": "Planta vascular marina amb fulles que presenten de 7 a 9 nervis paral·lels, amb la punta arrodonida. Tiges en rizoma, fràgils, de color groc-rogenc. Creix formant praderies poc denses en ambients calmats, no toleren l’onatge. De 0,5 a 40 m de profunditat.",
     "images": [
-      "p49_0.jpg",
-      "p49_1.jpg"
-    ]
+      "assets/img/p49_0.jpg",
+      "assets/img/p49_1.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Alga dels vidriers",
     "sci": "Posidonia oceanica",
     "description": "Planta vascular marina amb fulles alternes en forma de cinta (amb 10-17 nervis). Tija en forma de rizoma horitzontal, que sosté restes fibroses de les fulles velles. Els fruits anomenats “olives de mar” són comestibles. Fa praderies submergides fins a 25-35 m de profunditat.",
     "images": [
-      "p50_0.jpg",
-      "p50_1.jpg",
-      "p50_2.jpg"
-    ]
+      "assets/img/p50_0.jpg",
+      "assets/img/p50_1.jpg",
+      "assets/img/p50_2.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Acònit o tora blava",
     "sci": "Aconitum napellus",
     "description": "Fulles palmades, amb els segments linears. Flors en forma de casc, violacis o blaus. Planta tòxica que forma herbassars en sòls rics (eutròfics) de l’estatge subalpí.",
     "images": [
-      "p52_0.jpg",
-      "p52_1.jpg",
-      "p52_2.jpg"
-    ]
+      "assets/img/p52_0.jpg",
+      "assets/img/p52_1.jpg",
+      "assets/img/p52_2.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Genciana groga",
     "sci": "Gentiana lutea",
     "description": "Planta d’1 m d’alçada. Fulles oposades i decussades, amb 5-7 nervis molt marcats. Medicinal. Creix en herbassars exuberants i prats entre els 900 i els 2100 msnm.",
     "images": [
-      "p53_0.jpg",
-      "p53_1.jpg",
-      "p53_2.jpg",
-      "p53_3.jpg",
-      "p53_4.jpg"
-    ]
+      "assets/img/p53_0.jpg",
+      "assets/img/p53_1.jpg",
+      "assets/img/p53_2.jpg",
+      "assets/img/p53_3.jpg",
+      "assets/img/p53_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Flor de neu",
     "sci": "Leontopodium nivale subsp. alpinum",
     "description": "Fulles inferiors en roseta basal, la resta esparses per la tija. Planta densament tomentosa. Inflorescència formada per capítols de flors tubulades molt petites. Creix en pastures i roques de l’estatge subalpí.",
     "images": [
-      "p54_0.jpg",
-      "p54_1.jpg",
-      "p54_2.jpg"
-    ]
+      "assets/img/p54_0.jpg",
+      "assets/img/p54_1.jpg",
+      "assets/img/p54_2.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Belleraca",
     "sci": "Heracleum sphondylium",
     "description": "Fulles inferiors grans, palmades, verdes per l’anvers i glauques pel revers (pilós). Inflorescència en umbel·la, flors blanques. Es pot confondre amb la Pampa del Caucas, de fulla verda per ambdós costats. Creix en prats de dall i vorades de boscs humits.",
     "images": [
-      "p55_0.jpg",
-      "p55_1.jpg",
-      "p55_2.jpg",
-      "p55_3.jpg",
-      "p55_4.jpg"
-    ]
+      "assets/img/p55_0.jpg",
+      "assets/img/p55_1.jpg",
+      "assets/img/p55_2.jpg",
+      "assets/img/p55_3.jpg",
+      "assets/img/p55_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Brúcol",
     "sci": "Molopospermum peloponnesiacum",
     "description": "Herba de fins a 2 metres, fulles molt grans i lluents, molt partides i dentades. Flors grogues en inflorescència d’umbel·la. Els brots tendres són comestibles, en amanida. Per aquest motiu, la seva confusió amb la tora blava ha provocat intoxicacions. Estatge subalpí.",
     "images": [
-      "p56_0.jpg",
-      "p56_1.jpg",
-      "p56_2.jpg",
-      "p56_3.jpg"
-    ]
+      "assets/img/p56_0.jpg",
+      "assets/img/p56_1.jpg",
+      "assets/img/p56_2.jpg",
+      "assets/img/p56_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Margalló",
     "sci": "Chamaerops humilis",
     "description": "Única palmera autòctona de Catalunya. Fulles amb el limbe flabel·lat, pecíol llarg amb aculis al marge. Utilitzat com a ornamental i comestible. Creix en màquies i garrigues.",
     "images": [
-      "p57_0.jpg",
-      "p57_1.jpg",
-      "p57_2.jpg"
-    ]
+      "assets/img/p57_0.jpg",
+      "assets/img/p57_1.jpg",
+      "assets/img/p57_2.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Auró negre",
     "sci": "Acer campestre",
     "description": "Fulles ciliades al marge, dividides en 5 lòbuls. Fulles pubescents al revers, ales del fruit (sàmara) amb angle de 180º. Boscs de sòls rics (eutròfics).",
     "images": [
-      "p58_0.jpg",
-      "p58_1.jpg",
-      "p58_2.jpg",
-      "p58_3.jpg"
-    ]
+      "assets/img/p58_0.jpg",
+      "assets/img/p58_1.jpg",
+      "assets/img/p58_2.jpg",
+      "assets/img/p58_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Auró blanc",
     "sci": "Acer monspessulanum",
     "description": "Fulles no ciliades al marge, trilobades. Fulles glabres i ales del fruit (sàmara) amb lòbuls aguts. Boscs poc humits de sòls rics (eutròfics).",
     "images": [
-      "p59_0.jpg",
-      "p59_1.jpg",
-      "p59_2.jpg",
-      "p59_3.jpg"
-    ]
+      "assets/img/p59_0.jpg",
+      "assets/img/p59_1.jpg",
+      "assets/img/p59_2.jpg",
+      "assets/img/p59_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Blada",
     "sci": "Acer opalus",
     "description": "Fulles palmades (3-5 lòbuls dentats). Ales del fruit (sàmara) en angle agut o recte. Creix en rouredes i alzinars muntanyencs.",
     "images": [
-      "p60_0.jpg",
-      "p60_1.jpg",
-      "p60_2.jpg",
-      "p60_3.jpg"
-    ]
+      "assets/img/p60_0.jpg",
+      "assets/img/p60_1.jpg",
+      "assets/img/p60_2.jpg",
+      "assets/img/p60_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Vern",
     "sci": "Alnus glutinosa",
     "description": "FL (♂︎) Arbre amb escorça bruna-negrosa. Fulles viscoses, limbe orbicular, doblement dentat i cuneta a la base. Inflorescència en aments. Domina en els boscs de ribera",
     "images": [
-      "p61_0.jpg",
-      "p61_1.jpg",
-      "p61_2.jpg",
-      "p61_3.jpg"
-    ]
+      "assets/img/p61_0.jpg",
+      "assets/img/p61_1.jpg",
+      "assets/img/p61_2.jpg",
+      "assets/img/p61_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Bedoll",
     "sci": "Betula pendula",
     "description": "Escorça blanca i papiràcia. Fulles i pecíol glabres, doblement dentades. Flors en aments. Fruit volador (ales) molt petits. Creix en canals d’allaus i boscos caducifolis poc densos.",
     "images": [
-      "p62_0.jpg",
-      "p62_1.jpg",
-      "p62_2.jpg",
-      "p62_3.jpg",
-      "p62_4.jpg"
-    ]
+      "assets/img/p62_0.jpg",
+      "assets/img/p62_1.jpg",
+      "assets/img/p62_2.jpg",
+      "assets/img/p62_3.jpg",
+      "assets/img/p62_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Castanyer",
     "sci": "Castanea sativa",
     "description": "Fulles oblongo-lanceolades, rígides i dentades. Flors en aments masculins erectes. Fruit amb involucre molt espinós, que guarda les castanyes. Boscs caducifolis alterats per l’home.",
     "images": [
-      "p63_0.jpg",
-      "p63_1.jpg",
-      "p63_2.jpg",
-      "p63_3.jpg"
-    ]
+      "assets/img/p63_0.jpg",
+      "assets/img/p63_1.jpg",
+      "assets/img/p63_2.jpg",
+      "assets/img/p63_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Lledoner",
     "sci": "Celtis australis",
     "description": "Escorça llisa i grisenca. Fulles alternes, dentades i aspres de tacte. Fruit carnós (drupa) dolça i comestible, fosca en madurar. Cultivat i estès de forma espontània al voltant dels pobles.",
     "images": [
-      "p64_0.jpg",
-      "p64_1.jpg",
-      "p64_2.jpg",
-      "p64_3.jpg",
-      "p64_4.jpg"
-    ]
+      "assets/img/p64_0.jpg",
+      "assets/img/p64_1.jpg",
+      "assets/img/p64_2.jpg",
+      "assets/img/p64_3.jpg",
+      "assets/img/p64_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Faig",
     "sci": "Fagus sylvatica",
     "description": "Escorça d’un gris blanquinós. Fulles translúcides, ciliades al marge. Fruit amb involucre espinós que inclou 2-3 fages trígones. Boscs a l’estatge montà.",
     "images": [
-      "p65_0.jpg",
-      "p65_1.jpg",
-      "p65_2.jpg",
-      "p65_3.jpg",
-      "p65_4.jpg"
-    ]
+      "assets/img/p65_0.jpg",
+      "assets/img/p65_1.jpg",
+      "assets/img/p65_2.jpg",
+      "assets/img/p65_3.jpg",
+      "assets/img/p65_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Freixe de fulla petita",
     "sci": "Fraxinus angustifolia",
     "description": "Fulles imparipinnades i oposades. Escorça fissurada i rogenca. Gemmes brunes. Fruits alats (sàmares). Boscs de ribera en contrades mediterrànies.",
     "images": [
-      "p66_0.jpg",
-      "p66_1.jpg",
-      "p66_2.jpg",
-      "p66_3.jpg",
-      "p66_4.jpg",
-      "p66_5.jpg"
-    ]
+      "assets/img/p66_0.jpg",
+      "assets/img/p66_1.jpg",
+      "assets/img/p66_2.jpg",
+      "assets/img/p66_3.jpg",
+      "assets/img/p66_4.jpg",
+      "assets/img/p66_5.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Freixe de fulla gran",
     "sci": "Fraxinus excelsior",
     "description": "Fulles imparipinnades i oposades. Escorça fissurada. Gemmes negres. Fruits alats (sàmares). Boscs caducifolis humits de sòls rics (eutròfics).",
     "images": [
-      "p67_0.jpg",
-      "p67_1.jpg",
-      "p67_2.jpg",
-      "p67_3.jpg"
-    ]
+      "assets/img/p67_0.jpg",
+      "assets/img/p67_1.jpg",
+      "assets/img/p67_2.jpg",
+      "assets/img/p67_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Boix grèvol",
     "sci": "Ilex aquifolium",
     "description": "Arbret d’escorça grisenca. Fulles alternes, coriàcies i glabres, fortament ondulades i normalment espinoses al marge. Baia vermella. Creix en boscs i landes de l’estatge montà.",
     "images": [
-      "p68_0.jpg",
-      "p68_1.jpg",
-      "p68_2.jpg",
-      "p68_3.jpg"
-    ]
+      "assets/img/p68_0.jpg",
+      "assets/img/p68_1.jpg",
+      "assets/img/p68_2.jpg",
+      "assets/img/p68_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Olivera",
     "sci": "Olea europaea",
     "description": "Petit arbre d’escorça grisa. Olives. Fulles oposades, revers densament cobert de pels. Indrets de sòl poc humit.",
     "images": [
-      "p69_0.jpg",
-      "p69_1.jpg",
-      "p69_2.jpg",
-      "p69_3.jpg"
-    ]
+      "assets/img/p69_0.jpg",
+      "assets/img/p69_1.jpg",
+      "assets/img/p69_2.jpg",
+      "assets/img/p69_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Platan",
     "sci": "Platanus hispanica",
     "description": "Escorça llisa que es desprèn a plaques. Fulles simples lobulades. Flors compostes en glomèruls. Carreteres i boscs de ribera de muntanya baixa.",
     "images": [
-      "p70_0.jpg",
-      "p70_1.jpg",
-      "p70_2.jpg",
-      "p70_3.jpg",
-      "p70_4.jpg"
-    ]
+      "assets/img/p70_0.jpg",
+      "assets/img/p70_1.jpg",
+      "assets/img/p70_2.jpg",
+      "assets/img/p70_3.jpg",
+      "assets/img/p70_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Àlber",
     "sci": "Populus alba",
     "description": "FL (♂︎) Fulles adultes blanc-tomentoses al revers. Limbe ovat o suborbicular. Escorça blanca i llisa. Boscs de ribera.",
     "images": [
-      "p71_0.jpg",
-      "p71_1.jpg",
-      "p71_2.jpg",
-      "p71_3.jpg"
-    ]
+      "assets/img/p71_0.jpg",
+      "assets/img/p71_1.jpg",
+      "assets/img/p71_2.jpg",
+      "assets/img/p71_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Pollancre",
     "sci": "Populus nigra",
     "description": "FL (♂︎) Fulles rombals o triangulars. Escorça grisenca i fissurada. Boscs de ribera i llocs humits.",
     "images": [
-      "p72_0.jpg",
-      "p72_1.jpg",
-      "p72_2.jpg",
-      "p72_3.jpg",
-      "p72_4.jpg",
-      "p72_5.jpg"
-    ]
+      "assets/img/p72_0.jpg",
+      "assets/img/p72_1.jpg",
+      "assets/img/p72_2.jpg",
+      "assets/img/p72_3.jpg",
+      "assets/img/p72_4.jpg",
+      "assets/img/p72_5.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Trèmol",
     "sci": "Populus tremula",
     "description": "FL (♂︎) Fulles glabres. Limbe sinuato-dentat. Pecíol llarg. Escorça llisa i blanquinosa (amb marques triangulars). Boscs caducifolis clars.",
     "images": [
-      "p73_0.jpg",
-      "p73_1.jpg",
-      "p73_2.jpg",
-      "p73_3.jpg",
-      "p73_4.jpg",
-      "p73_5.jpg",
-      "p73_6.jpg"
-    ]
+      "assets/img/p73_0.jpg",
+      "assets/img/p73_1.jpg",
+      "assets/img/p73_2.jpg",
+      "assets/img/p73_3.jpg",
+      "assets/img/p73_4.jpg",
+      "assets/img/p73_5.jpg",
+      "assets/img/p73_6.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Cirerer",
     "sci": "Prunus avium",
     "description": "Limbe amb dents irregulars. Flors sovint anteriors a les fulles. Escorça es desprèn en làmines papiràcies. Boscs caducifolis humits",
     "images": [
-      "p74_0.jpg",
-      "p74_1.jpg",
-      "p74_2.jpg",
-      "p74_3.jpg",
-      "p74_4.jpg"
-    ]
+      "assets/img/p74_0.jpg",
+      "assets/img/p74_1.jpg",
+      "assets/img/p74_2.jpg",
+      "assets/img/p74_3.jpg",
+      "assets/img/p74_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Roure de fulla petita",
     "sci": "Quercus faginea",
     "description": "Enllaç a infografia dels roures autòctons peninsulars Fulles amb revers cobert de pèls. Fulles marcescents, perdurables durant l’hivern. Boscos a les contrades mediterrànies poc plujoses.",
     "images": [
-      "p75_0.jpg",
-      "p75_1.jpg",
-      "p75_2.jpg",
-      "p75_3.jpg",
-      "p75_4.jpg",
-      "p75_5.jpg"
-    ]
+      "assets/img/p75_0.jpg",
+      "assets/img/p75_1.jpg",
+      "assets/img/p75_2.jpg",
+      "assets/img/p75_3.jpg",
+      "assets/img/p75_4.jpg",
+      "assets/img/p75_5.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Roure martinenc",
     "sci": "Quercus humilis",
     "description": "Fulles amb lòbuls profunds, revers pilós. Boscos extensos a l’estatge montà.",
     "images": [
-      "p76_0.jpg",
-      "p76_1.jpg",
-      "p76_2.jpg",
-      "p76_3.jpg"
-    ]
+      "assets/img/p76_0.jpg",
+      "assets/img/p76_1.jpg",
+      "assets/img/p76_2.jpg",
+      "assets/img/p76_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Alzina",
     "sci": "Quercus ilex",
     "description": "Capçada ampla i densa. Fulles d’anvers verd fosc i revers grisenc (pilós). Forma boscos.",
     "images": [
-      "p77_0.jpg",
-      "p77_1.jpg",
-      "p77_2.jpg",
-      "p77_3.jpg",
-      "p77_4.jpg"
-    ]
+      "assets/img/p77_0.jpg",
+      "assets/img/p77_1.jpg",
+      "assets/img/p77_2.jpg",
+      "assets/img/p77_3.jpg",
+      "assets/img/p77_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Roure de fulla gran",
     "sci": "Quercus petraea",
     "description": "Fulles amb pecíol llarg, lobulades. Boscos caducifolis en les contrades plujoses. Arbre de gran port.",
     "images": [
-      "p78_0.jpg",
-      "p78_1.jpg",
-      "p78_2.jpg",
-      "p78_3.jpg"
-    ]
+      "assets/img/p78_0.jpg",
+      "assets/img/p78_1.jpg",
+      "assets/img/p78_2.jpg",
+      "assets/img/p78_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Alzina surera",
     "sci": "Quercus suber",
     "description": "Tronc i branques coberts de suro. Fulles tomentoses i grises al revers. Creix sobre substrats àcids en llocs secs i assolellats.",
     "images": [
-      "p79_0.jpg",
-      "p79_1.jpg",
-      "p79_2.jpg",
-      "p79_3.jpg"
-    ]
+      "assets/img/p79_0.jpg",
+      "assets/img/p79_1.jpg",
+      "assets/img/p79_2.jpg",
+      "assets/img/p79_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Salze",
     "sci": "Salix alba",
     "description": "Fulles glauques al revers. Limbe oblongo-lanceolat. Inflorescència en aments. Boscs de ribera.",
     "images": [
-      "p80_0.jpg",
-      "p80_1.jpg",
-      "p80_2.jpg",
-      "p80_3.jpg",
-      "p80_4.jpg"
-    ]
+      "assets/img/p80_0.jpg",
+      "assets/img/p80_1.jpg",
+      "assets/img/p80_2.jpg",
+      "assets/img/p80_3.jpg",
+      "assets/img/p80_4.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Moixera",
     "sci": "Sorbus aria",
     "description": "Fulles simples i dentades, tomentoses i blanquinoses al revers. Fruit carnós vermell. Boscs caducifolis.",
     "images": [
-      "p81_0.jpg",
-      "p81_1.jpg",
-      "p81_2.jpg",
-      "p81_3.jpg"
-    ]
+      "assets/img/p81_0.jpg",
+      "assets/img/p81_1.jpg",
+      "assets/img/p81_2.jpg",
+      "assets/img/p81_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Moixera de guilla",
     "sci": "Sorbus aucuparia",
     "description": "Fulles pinnaticompostes. Fruit carnós vermell persistent a l’hivern. Boscs de coníferes i caducifolis en sòls àcids subalpins.",
     "images": [
-      "p82_0.jpg",
-      "p82_1.jpg",
-      "p82_2.jpg",
-      "p82_3.jpg"
-    ]
+      "assets/img/p82_0.jpg",
+      "assets/img/p82_1.jpg",
+      "assets/img/p82_2.jpg",
+      "assets/img/p82_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Servera",
     "sci": "Sorbus domestica",
     "description": "Fulles pinnaticompostes i amb estípules. Fruit comestible. Boscs en contrades mediterrànies.",
     "images": [
-      "p83_0.jpg",
-      "p83_1.jpg",
-      "p83_2.jpg",
-      "p83_3.jpg"
-    ]
+      "assets/img/p83_0.jpg",
+      "assets/img/p83_1.jpg",
+      "assets/img/p83_2.jpg",
+      "assets/img/p83_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Moixera de pastor",
     "sci": "Sorbus torminalis",
     "description": "Fulles simples profundament lobulades. Fruit obovoides. Boscs caducifolis",
     "images": [
-      "p84_0.jpg",
-      "p84_1.jpg",
-      "p84_2.jpg",
-      "p84_3.jpg"
-    ]
+      "assets/img/p84_0.jpg",
+      "assets/img/p84_1.jpg",
+      "assets/img/p84_2.jpg",
+      "assets/img/p84_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Tamaria",
     "sci": "Tamarix sp.",
     "description": "Fulles triangular esquamiformes i imbricades. Inflorescència en plomall.",
     "images": [
-      "p85_0.jpg",
-      "p85_1.jpg",
-      "p85_2.jpg",
-      "p85_3.jpg"
-    ]
+      "assets/img/p85_0.jpg",
+      "assets/img/p85_1.jpg",
+      "assets/img/p85_2.jpg",
+      "assets/img/p85_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Tell de fulla petita",
     "sci": "Tilia cordata",
     "description": "Fulles glauques i glabres al revers, cordades. Amb pèls rogencs a l’axil·la dels nervis. Boscs caducifolis humits en contrades de clima marítim.",
     "images": [
-      "p86_0.jpg",
-      "p86_1.jpg",
-      "p86_2.jpg",
-      "p86_3.jpg"
-    ]
+      "assets/img/p86_0.jpg",
+      "assets/img/p86_1.jpg",
+      "assets/img/p86_2.jpg",
+      "assets/img/p86_3.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Tell de fulla gran",
     "sci": "Tilia platyphyllos",
     "description": "Fulles verdes a ambdues superfícies, pubescents al revers i blanquinosos a l’axil·la dels nervis. Boscs caducifolis a les obagues frescals.",
     "images": [
-      "p87_0.jpg",
-      "p87_1.jpg",
-      "p87_2.jpg",
-      "p87_3.jpg",
-      "p87_4.jpg",
-      "p87_5.jpg"
-    ]
+      "assets/img/p87_0.jpg",
+      "assets/img/p87_1.jpg",
+      "assets/img/p87_2.jpg",
+      "assets/img/p87_3.jpg",
+      "assets/img/p87_4.jpg",
+      "assets/img/p87_5.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Tòfona negra",
     "sci": "Tuber melanosporum",
     "description": "Cos subterrani fructífer globós i irregular. Gleba negra violàcia un cop madura, traçada per venes de color blanc. Fructifica a l’hivern. Sòls calcaris amb drenatge, porosos i airejats. Micorriza sobre Quercus.",
     "images": [
-      "p90_0.jpg"
-    ]
+      "assets/img/p90_0.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Tòfona gravada",
     "sci": "Tuber uncinatum",
     "description": "Cos subterrani fructífer globós i fortament verrucós. Gleba marró, traçada per venes de color blanc molt fines. Fructifica a la tardor. Sòls calcaris. Micorriza sobre Quercus, avellaners, til·lers i pins.",
     "images": [
-      "p91_0.jpg"
-    ]
+      "assets/img/p91_0.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Tòfona del petroli",
     "sci": "Tuber mesentericum",
     "description": "Cos subterrani fructífer globós i fortament verrucós. Gleba marró fosc, traçada per venes de color blanc molt fines. Fructifica a primavera-estiu. Sòls calcaris. Micorriza sobre Quercus, avellaners i faig. Comestible poc apreciat, olor molt intens a fenol o alquitrà.",
     "images": [
-      "p92_0.jpg"
-    ]
+      "assets/img/p92_0.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Tòfona d’estiu",
     "sci": "Tuber aestivum",
     "description": "Cos subterrani fructífer globós i fortament verrucós. Gleba marró, traçada per venes de color blanc molt fines. Fructifica a l’estiu. Sòls calcaris. Micorriza sobre Quercus, avellaners, til·lers i pins. Molt similar a Tuber uncinatum. De menor qualitat que Tuber melanosporum o Tuber uncinatum",
     "images": [
-      "p93_0.jpg"
-    ]
+      "assets/img/p93_0.jpg"
+    ],
+    "category": "autoctona"
   },
   {
     "common": "Tòfona magenca",
     "sci": "Tuber brumale",
     "description": "Cos subterrani fructífer tuberiforme, lobulat. Gleba molt negra, traçada per venes de color blanc amples. Fructifica a l’hivern. Sòls calcaris. Micorriza sobre avellanerts i til·lers.",
     "images": [
-      "p94_0.jpg",
-      "p94_1.jpg"
-    ]
+      "assets/img/p94_0.jpg",
+      "assets/img/p94_1.jpg"
+    ],
+    "category": "autoctona"
+  },
+  {
+    "common": "Atzavara",
+    "sci": "Agave americana",
+    "description": "Gran roseta de fulles amb fortes espines. Floreix als 10-20 anys i després mor. Indrets secs i assolellats.",
+    "images": [
+      "assets/img_exotiques/p9_0.jpg",
+      "assets/img_exotiques/p9_1.jpg",
+      "assets/img_exotiques/p9_2.jpg",
+      "assets/img_exotiques/p9_3.jpg",
+      "assets/img_exotiques/p9_4.jpg"
+    ],
+    "category": "invasora"
+  },
+  {
+    "common": "Budleia",
+    "sci": "Buddleja davidii",
+    "description": "Fulles oposades i dentades, tomentoses al revers. Inflorescència terminal cilíndrica. Colonitza boscos de ribera.",
+    "images": [
+      "assets/img_exotiques/p10_0.jpg",
+      "assets/img_exotiques/p10_1.jpg",
+      "assets/img_exotiques/p10_2.jpg",
+      "assets/img_exotiques/p10_3.jpg",
+      "assets/img_exotiques/p10_4.jpg"
+    ],
+    "category": "invasora"
+  },
+  {
+    "common": "Bàlsam – Ungla de gat",
+    "sci": "Carpobrotus sp.",
+    "description": "Fulles suculentes i oposades. Inflorescència en capítol. Creix en talussos i plateges i sòls rocosos del litoral.",
+    "images": [
+      "assets/img_exotiques/p11_0.jpg",
+      "assets/img_exotiques/p11_1.jpg",
+      "assets/img_exotiques/p11_2.jpg",
+      "assets/img_exotiques/p11_3.jpg"
+    ],
+    "category": "invasora"
+  },
+  {
+    "common": "Herba de la Pampa",
+    "sci": "Cortaderia sp.",
+    "description": "Denses tofes de fulles amb el marge serrulat. Flors en panícula densa. Creix en solars abandonats.",
+    "images": [
+      "assets/img_exotiques/p12_0.jpg",
+      "assets/img_exotiques/p12_1.jpg",
+      "assets/img_exotiques/p12_2.jpg",
+      "assets/img_exotiques/p12_3.jpg"
+    ],
+    "category": "invasora"
+  },
+  {
+    "common": "Clavellina",
+    "sci": "Cylindropuntia sp.",
+    "description": "Port arbustiu molt dens, rarament presenta tronc central. Molt espinós. Ocupa marges, sòls denudats, rocallosos o prats secs mediterranis.",
+    "images": [
+      "assets/img_exotiques/p13_0.jpg",
+      "assets/img_exotiques/p13_1.jpg",
+      "assets/img_exotiques/p13_2.jpg"
+    ],
+    "category": "invasora"
+  },
+  {
+    "common": "Figuera de Moro",
+    "sci": "Opuntia sp.",
+    "description": "Tiges suculentes. Branques formades per pales (cladodis) portadores d’espines. Fruit comestible. Creix al litoral.",
+    "images": [
+      "assets/img_exotiques/p14_0.jpg",
+      "assets/img_exotiques/p14_1.jpg",
+      "assets/img_exotiques/p14_2.jpg",
+      "assets/img_exotiques/p14_3.jpg",
+      "assets/img_exotiques/p14_4.jpg"
+    ],
+    "category": "invasora"
+  },
+  {
+    "common": "Seneci del cap",
+    "sci": "Senecio inaequidens",
+    "description": "Fulles lanceolades, esparses i denticulades. Inflorescència en capítols grocs. Creix en vores de camins, terres remogudes i prats secs.",
+    "images": [
+      "assets/img_exotiques/p15_0.jpg",
+      "assets/img_exotiques/p15_1.jpg",
+      "assets/img_exotiques/p15_2.jpg",
+      "assets/img_exotiques/p15_3.jpg",
+      "assets/img_exotiques/p15_4.jpg",
+      "assets/img_exotiques/p15_5.jpg"
+    ],
+    "category": "invasora"
+  },
+  {
+    "common": "Avets no peninsulars",
+    "sci": "Abies sp.",
+    "description": "",
+    "images": [
+      "assets/img_exotiques/p16_0.jpg",
+      "assets/img_exotiques/p16_1.jpg"
+    ],
+    "category": "no_invasora"
+  },
+  {
+    "common": "Pinsap",
+    "sci": "Abies pinsapo",
+    "description": "Fulles gruixudes i rígides, disposades tot al volt de la tija. Pinyes erectes. Zones muntanyoses.",
+    "images": [
+      "assets/img_exotiques/p17_0.jpg",
+      "assets/img_exotiques/p17_1.jpg",
+      "assets/img_exotiques/p17_2.jpg",
+      "assets/img_exotiques/p17_3.jpg"
+    ],
+    "category": "no_invasora"
+  },
+  {
+    "common": "Avet roig",
+    "sci": "Picea abies",
+    "description": "Pinyes pèndules. Zones muntanyoses.",
+    "images": [
+      "assets/img_exotiques/p18_0.jpg",
+      "assets/img_exotiques/p18_1.jpg",
+      "assets/img_exotiques/p18_2.jpg",
+      "assets/img_exotiques/p18_3.jpg"
+    ],
+    "category": "no_invasora"
+  },
+  {
+    "common": "Pi insigne",
+    "sci": "Pinus radiata",
+    "description": "Fulles en grups de tres. Pinyes asimètriques a la base i adherides a les branques. Contrades orientals humides.",
+    "images": [
+      "assets/img_exotiques/p19_0.jpg",
+      "assets/img_exotiques/p19_1.jpg",
+      "assets/img_exotiques/p19_2.jpg"
+    ],
+    "category": "no_invasora"
+  },
+  {
+    "common": "Avet Douglas",
+    "sci": "Pseudotsuga menziesii",
+    "description": "Fulles estretament linears, pinyes pèndules. Zones de muntanya.",
+    "images": [
+      "assets/img_exotiques/p20_0.jpg",
+      "assets/img_exotiques/p20_1.jpg",
+      "assets/img_exotiques/p20_2.jpg",
+      "assets/img_exotiques/p20_3.jpg",
+      "assets/img_exotiques/p20_4.jpg"
+    ],
+    "category": "no_invasora"
+  },
+  {
+    "common": "Alternatera d’aigua",
+    "sci": "Alternanthera philoxeroides",
+    "description": "Planta flotant. Fulles lanceolades i oposades. Inflorescència blanca i esfèrica. Creix en estuaris, llacs i zones de ribera de rius.",
+    "images": [
+      "assets/img_exotiques/p21_0.jpg",
+      "assets/img_exotiques/p21_1.jpg",
+      "assets/img_exotiques/p21_2.jpg"
+    ],
+    "category": "invasora"
+  },
+  {
+    "common": "Cannabis",
+    "sci": "Cannabis sativa ssp. indica",
+    "description": "Fulla palmaticomposta. De vegades subespontània. Cultivada com a planta psicoactiva.",
+    "images": [
+      "assets/img_exotiques/p22_0.jpg"
+    ],
+    "category": "no_invasora"
+  },
+  {
+    "common": "Cànem",
+    "sci": "Cannabis sativa ssp. sativa",
+    "description": "Fulla palmaticomposta. De vegades subespontània. Cultivada com a planta tèxtil i per les seves llavors (aliment dels ocells).",
+    "images": [
+      "assets/img_exotiques/p23_0.jpg",
+      "assets/img_exotiques/p23_1.jpg"
+    ],
+    "category": "no_invasora"
+  },
+  {
+    "common": "Jacint d’aigua",
+    "sci": "Eichhornia crassipes",
+    "description": "Fulles en roseta amb el pecíol inflat i el limbe cordiforme. Inflorescència en espiga de color violaci. Rius i canals.",
+    "images": [
+      "assets/img_exotiques/p24_0.jpg",
+      "assets/img_exotiques/p24_1.jpg",
+      "assets/img_exotiques/p24_2.jpg",
+      "assets/img_exotiques/p24_3.jpg"
+    ],
+    "category": "invasora"
+  },
+  {
+    "common": "Elodea de Nutall",
+    "sci": "Elodea nuttallii",
+    "description": "Tiges allargades. Fulles agrupades en verticils de tres. Ocupa masses estagnants o de curs lent, preferentment poc profundes i ben il·luminades.",
+    "images": [
+      "assets/img_exotiques/p25_0.jpg",
+      "assets/img_exotiques/p25_1.jpg"
+    ],
+    "category": "invasora"
+  },
+  {
+    "common": "Pampa del Caucas",
+    "sci": "Heracleum mantegazzianum",
+    "description": "Envaeix ecosistemes de ribera del riu Segre i el seu contacte provoca problemes per a la salut humana (fitofotodermatitis). Floreix en el darrer any de vida. Es pot confondre amb l’autòctona Heracleum sphondylium, aquesta darrera té la fulla menys dividida.",
+    "images": [
+      "assets/img_exotiques/p26_0.jpg",
+      "assets/img_exotiques/p26_1.jpg",
+      "assets/img_exotiques/p26_2.jpg"
+    ],
+    "category": "invasora"
+  },
+  {
+    "common": "Mimosa",
+    "sci": "Acacia dealbata",
+    "description": "Fulles bipinnaticompostes. Inflorescència en glomèruls grocs i esfèrics. Lleguminosa: el fruit és un llegum.",
+    "images": [
+      "assets/img_exotiques/p27_0.jpg",
+      "assets/img_exotiques/p27_1.jpg",
+      "assets/img_exotiques/p27_2.jpg",
+      "assets/img_exotiques/p27_3.jpg",
+      "assets/img_exotiques/p27_4.jpg",
+      "assets/img_exotiques/p27_5.jpg"
+    ],
+    "category": "invasora"
+  },
+  {
+    "common": "Ailant",
+    "sci": "Ailanthus altissima",
+    "description": "Fulles imparipinnades. Fruits alats (sàmares). Creix fent denses poblacions de rebrots de rel en zones pertorbades per l’home.",
+    "images": [
+      "assets/img_exotiques/p28_0.jpg",
+      "assets/img_exotiques/p28_1.jpg",
+      "assets/img_exotiques/p28_2.jpg",
+      "assets/img_exotiques/p28_3.jpg"
+    ],
+    "category": "invasora"
+  },
+  {
+    "common": "Eucaliptus",
+    "sci": "Eucaliptus sp.",
+    "description": "Arbre de grans dimensions i d’escorça que s’exfolia a tires irregulars. Fulles falcades asimètriques. Cultivat com a arbre forestal.",
+    "images": [
+      "assets/img_exotiques/p29_0.jpg",
+      "assets/img_exotiques/p29_1.jpg",
+      "assets/img_exotiques/p29_2.jpg",
+      "assets/img_exotiques/p29_3.jpg"
+    ],
+    "category": "no_invasora"
+  },
+  {
+    "common": "Falsa acàcia",
+    "sci": "Robinia pseudoacacia",
+    "description": "Arbre amb estípules espinoses. Fulles imparipinnades. Fruits: llegums pènduls. Subespontània en boscos i marges de rius humits.",
+    "images": [
+      "assets/img_exotiques/p30_0.jpg",
+      "assets/img_exotiques/p30_1.jpg",
+      "assets/img_exotiques/p30_2.jpg",
+      "assets/img_exotiques/p30_3.jpg",
+      "assets/img_exotiques/p30_4.jpg",
+      "assets/img_exotiques/p30_5.jpg"
+    ],
+    "category": "no_invasora"
+  },
+  {
+    "common": "Om de Sibèria",
+    "sci": "Ulmus pumila",
+    "description": "Fruit sec i alat (sàmara).",
+    "images": [
+      "assets/img_exotiques/p31_0.jpg",
+      "assets/img_exotiques/p31_1.jpg",
+      "assets/img_exotiques/p31_2.jpg",
+      "assets/img_exotiques/p31_3.jpg"
+    ],
+    "category": "no_invasora"
   }
 ]

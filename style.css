@@ -113,7 +113,7 @@ main{ flex:1; padding:20px 18px 60px; }
   position:relative; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow);
   background:var(--green-100); aspect-ratio: 4/3;
 }
-.photo-card img{ width:100%; height:100%; object-fit:cover; display:block; background:var(--green-100); }
+.photo-card img{ width:100%; height:100%; object-fit:contain; display:block; background:var(--green-100); }
 .photo-card .cat-tag{
   position:absolute; top:10px; left:10px; background:rgba(20,40,15,.55); color:#fff; font-size:.72rem; font-weight:700;
   padding:4px 10px; border-radius:999px; backdrop-filter:blur(3px);
@@ -148,6 +148,7 @@ main{ flex:1; padding:20px 18px 60px; }
   cursor:pointer; transition:border-color .12s ease, background .12s ease, transform .08s ease;
   display:flex; align-items:center; gap:10px;
 }
+.opt-btn i{ display:block; font-style:italic; font-weight:600; font-size:.78em; color:var(--ink-soft); margin-top:2px; }
 .opt-btn .letter{
   flex:none; width:26px; height:26px; border-radius:8px; background:var(--green-50); color:var(--green-700);
   display:flex; align-items:center; justify-content:center; font-size:.8rem; font-weight:800;
@@ -235,7 +236,7 @@ main{ flex:1; padding:20px 18px 60px; }
 @keyframes slideup{ from{transform:translateY(30px); opacity:0;} to{transform:translateY(0); opacity:1;} }
 .img-wrap{ position:relative; width:100%; aspect-ratio:4/3; background:var(--green-100); overflow:hidden; }
 .img-wrap .gal-img{
-  width:100%; height:100%; object-fit:cover; display:block; opacity:0; transition:opacity .25s ease;
+  width:100%; height:100%; object-fit:contain; display:block; opacity:0; transition:opacity .25s ease;
 }
 .img-wrap.loaded .gal-img{ opacity:1; }
 .img-spinner{
@@ -288,3 +289,10 @@ main{ flex:1; padding:20px 18px 60px; }
 .toast.show{ opacity:1; transform:translate(-50%,0); }
 
 .section-title{ font-size:1.25rem; margin:4px 0 16px; color:var(--green-900); }
+
+.status-tag{
+  display:inline-block; font-size:.72rem; font-weight:800; padding:3px 9px; border-radius:999px; margin:2px 0;
+}
+.tag-invasora{ background:#fde3de; color:#b23a1f; }
+.tag-exotica{ background:#e5eefc; color:#2e5fa3; }
+.flash .status-tag{ margin-top:4px; }

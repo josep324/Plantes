@@ -7,6 +7,7 @@
 const STORAGE_KEY = "flora-quiz-progress-v1";
 const MODE_KEY = "flora-quiz-answermode-v1";
 const SIZE_KEY = "flora-quiz-roundsize-v1";
+const ORIGIN_KEY = "flora-quiz-origin-v1";
 const ROUND_SIZE_OPTIONS = [10, 20, 40, "all"];
 const DEFAULT_ROUND_SIZE = 10;
 
@@ -35,13 +36,17 @@ function saveProgress() {
 }
 let progress = loadProgress();
 
-// answerMode: 'common' (nom en català) | 'sci' (nom científic)
+// answerMode: 'common' (nom en català) | 'sci' (nom científic) | 'combined' (tots dos)
 let answerMode = localStorage.getItem(MODE_KEY) || "common";
 function setAnswerMode(mode) {
   answerMode = mode;
   localStorage.setItem(MODE_KEY, mode);
 }
-function labelFor(sp) { return answerMode === "sci" ? sp.sci : sp.common; }
+function labelFor(sp) {
+  if (answerMode === "sci") return sp.sci;
+  if (answerMode === "combined") return `${sp.common}<i>${sp.sci}</i>`;
+  return sp.common;
+}
 
 // roundSize: number of questions per round, or "all" for every species
 let roundSize = localStorage.getItem(SIZE_KEY) || DEFAULT_ROUND_SIZE;
@@ -51,7 +56,25 @@ function setRoundSize(val) {
   localStorage.setItem(SIZE_KEY, roundSize);
 }
 function resolvedRoundSize() {
-  return roundSize === "all" ? SPECIES_DATA.length : Math.min(roundSize, SPECIES_DATA.length);
+  const pool = activeSpecies();
+  return roundSize === "all" ? pool.length : Math.min(roundSize, pool.length);
+}
+
+// origin: 'autoctona' | 'exotica' | 'all' — quin subconjunt del catàleg s'usa
+let origin = localStorage.getItem(ORIGIN_KEY) || "autoctona";
+function setOrigin(val) {
+  origin = val;
+  localStorage.setItem(ORIGIN_KEY, val);
+}
+function activeSpecies() {
+  if (origin === "exotica") return SPECIES_DATA.filter((s) => s.category !== "autoctona");
+  if (origin === "all") return SPECIES_DATA;
+  return SPECIES_DATA.filter((s) => s.category === "autoctona");
+}
+function statusTag(sp) {
+  if (sp.category === "invasora") return `<span class="status-tag tag-invasora">🚨 Invasora</span>`;
+  if (sp.category === "no_invasora") return `<span class="status-tag tag-exotica">🌍 Exòtica</span>`;
+  return "";
 }
 
 /* ---------- helpers ---------- */
@@ -78,10 +101,10 @@ function showToast(msg) {
 }
 
 /* ---------- weighted pool for "Repàs intel·ligent" ---------- */
-function buildWeightedPool() {
+function buildWeightedPool(pool) {
   // species with more wrong answers (relative to correct) get higher weight
   const weighted = [];
-  SPECIES_DATA.forEach((sp) => {
+  pool.forEach((sp) => {
     const k = keyFor(sp);
     const wrong = progress.wrong[k] || 0;
     const correct = progress.correct[k] || 0;
@@ -111,8 +134,8 @@ function pickWeighted(weighted, n) {
 }
 
 /* ---------- quiz question generation ---------- */
-function makeQuestion(correctSp) {
-  const distractorsPool = SPECIES_DATA.filter((s) => s.sci !== correctSp.sci);
+function makeQuestion(correctSp, pool) {
+  const distractorsPool = (pool || SPECIES_DATA).filter((s) => s.sci !== correctSp.sci);
   const distractors = sample(distractorsPool, 3);
   const options = shuffle([correctSp, ...distractors]);
   return { correctSp, options, image: randomImage(correctSp) };
@@ -140,18 +163,32 @@ function render() {
 }
 
 function renderHome() {
-  const totalSeen = Object.keys(progress.seen).length;
+  const active = activeSpecies();
+  const totalSeen = active.filter((sp) => progress.seen[keyFor(sp)]).length;
+  const nAutoctona = SPECIES_DATA.filter((s) => s.category === "autoctona").length;
+  const nExotica = SPECIES_DATA.filter((s) => s.category !== "autoctona").length;
+
   main.innerHTML = `
     <section class="hero">
-      <h1 class="font-display">Coneixes la flora autòctona? 🌱</h1>
+      <h1 class="font-display">Coneixes la flora catalana? 🌱</h1>
       <p>Practica amb fotos reals i endevina quina planta és. Quatre opcions, feedback immediat i repàs de les que et costen més.</p>
     </section>
 
     <div class="filters-panel">
+      <h4>Origen de les espècies</h4>
+      <div class="chip-row" id="originChips">
+        <button class="chip ${origin === "autoctona" ? "active" : ""}" data-origin="autoctona">🌱 Autòctones (${nAutoctona})</button>
+        <button class="chip ${origin === "exotica" ? "active" : ""}" data-origin="exotica">🌍 Exòtiques (${nExotica})</button>
+        <button class="chip ${origin === "all" ? "active" : ""}" data-origin="all">🔀 Totes (${SPECIES_DATA.length})</button>
+      </div>
+    </div>
+
+    <div class="filters-panel">
       <h4>Tipus de test</h4>
       <div class="chip-row" id="answerModeChips">
-        <button class="chip ${answerMode === "common" ? "active" : ""}" data-answer-mode="common">🇨🇦 Noms en català</button>
-        <button class="chip ${answerMode === "sci" ? "active" : ""}" data-answer-mode="sci">🔬 Noms científics</button>
+        <button class="chip ${answerMode === "common" ? "active" : ""}" data-answer-mode="common">🇨🇦 Nom en català</button>
+        <button class="chip ${answerMode === "sci" ? "active" : ""}" data-answer-mode="sci">🔬 Nom científic</button>
+        <button class="chip ${answerMode === "combined" ? "active" : ""}" data-answer-mode="combined">🇨🇦+🔬 Tots dos</button>
       </div>
     </div>
 
@@ -159,7 +196,7 @@ function renderHome() {
       <h4>Nombre de preguntes</h4>
       <div class="chip-row" id="roundSizeChips">
         ${ROUND_SIZE_OPTIONS.map((n) => `
-          <button class="chip ${roundSize === n ? "active" : ""}" data-round-size="${n}">${n === "all" ? `Totes (${SPECIES_DATA.length})` : n}</button>
+          <button class="chip ${roundSize === n ? "active" : ""}" data-round-size="${n}">${n === "all" ? `Totes (${active.length})` : n}</button>
         `).join("")}
       </div>
     </div>
@@ -169,8 +206,8 @@ function renderHome() {
         <div class="mode-icon">🎯</div>
         <div class="mode-body">
           <h3>Repte ràpid</h3>
-          <p>${resolvedRoundSize()} preguntes a l'atzar de tot el catàleg, sense repetir.</p>
-          <span class="badge-count">${SPECIES_DATA.length} espècies disponibles</span>
+          <p>${resolvedRoundSize()} preguntes a l'atzar del catàleg triat, sense repetir.</p>
+          <span class="badge-count">${active.length} espècies disponibles</span>
         </div>
       </button>
       <button class="mode-card est" data-start="repas">
@@ -178,7 +215,7 @@ function renderHome() {
         <div class="mode-body">
           <h3>Repàs intel·ligent</h3>
           <p>Prioritza les plantes que encara no domines o que has fallat.</p>
-          <span class="badge-count">${totalSeen}/${SPECIES_DATA.length} explorades</span>
+          <span class="badge-count">${totalSeen}/${active.length} explorades</span>
         </div>
       </button>
     </div>
@@ -207,6 +244,12 @@ function renderHome() {
       renderHome();
     });
   });
+  main.querySelectorAll("[data-origin]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      setOrigin(btn.dataset.origin);
+      renderHome();
+    });
+  });
 }
 
 function startRound(mode) {
@@ -217,14 +260,15 @@ function startRound(mode) {
   state.current = 0;
   state.answered = false;
 
+  const active = activeSpecies();
   const size = resolvedRoundSize();
   if (mode === "reto") {
-    state.pool = sample(SPECIES_DATA, size);
+    state.pool = sample(active, size);
   } else {
-    const weighted = buildWeightedPool();
+    const weighted = buildWeightedPool(active);
     state.pool = pickWeighted(weighted, size);
   }
-  state.questions = state.pool.map(makeQuestion);
+  state.questions = state.pool.map((sp) => makeQuestion(sp, active));
   state.view = "quiz";
   render();
 }
@@ -316,7 +360,7 @@ function handleAnswer(chosen, btnEl) {
   panel.className = `feedback-panel ${isCorrect ? "ok" : "bad"}`;
   panel.innerHTML = `
     <div class="fb-title">${isCorrect ? "✅ Correcte!" : "❌ No era aquesta"} — ${q.correctSp.common}</div>
-    <div class="fb-sci">${q.correctSp.sci}</div>
+    <div class="fb-sci">${q.correctSp.sci} ${statusTag(q.correctSp)}</div>
     <p class="fb-desc">${q.correctSp.description || "Sense descripció disponible."}</p>
     ${q.correctSp.images.length > 1 ? `<button class="gallery-btn wide" id="fbGalleryBtn">📷 Veure totes les fotos (${q.correctSp.images.length})</button>` : ""}
     <button class="next-btn" id="nextBtn">${state.current + 1 < state.questions.length ? "Següent →" : "Veure resultats"}</button>
@@ -366,7 +410,7 @@ function renderResult() {
   if (state.missed.length > 0) {
     retryBtn.addEventListener("click", () => {
       state.pool = shuffle(state.missed);
-      state.questions = state.pool.map(makeQuestion);
+      state.questions = state.pool.map((sp) => makeQuestion(sp, activeSpecies()));
       state.current = 0; state.score = 0; state.streak = 0; state.missed = []; state.answered = false;
       state.view = "quiz";
       render();
@@ -407,7 +451,7 @@ function renderStudy() {
 function paintCards() {
   const grid = document.getElementById("cardGrid");
   const term = studyFilter.trim().toLowerCase();
-  const list = SPECIES_DATA.filter((sp) =>
+  const list = activeSpecies().filter((sp) =>
     !term || sp.common.toLowerCase().includes(term) || sp.sci.toLowerCase().includes(term)
   );
   grid.innerHTML = list.map((sp) => {
@@ -426,6 +470,7 @@ function paintCards() {
         <div class="meta">
           <div class="common">${sp.common}</div>
           <div class="sci">${sp.sci}</div>
+          ${statusTag(sp)}
         </div>
       </div>
     `;
@@ -464,7 +509,7 @@ function openGallery(sp, opts) {
         <div class="modal-body">
           ${hideNames
             ? `<p class="hint-text">Compara els diferents exemplars per fixar-te en els detalls que no canvien: forma de la fulla, flor, fruit o escorça.</p>`
-            : `<h3>${sp.common}</h3><span class="sci">${sp.sci}</span><p>${sp.description || "Sense descripció disponible."}</p>`}
+            : `<h3>${sp.common}</h3><span class="sci">${sp.sci}</span> ${statusTag(sp)}<p>${sp.description || "Sense descripció disponible."}</p>`}
         </div>
       </div>
     `;
@@ -499,11 +544,12 @@ function openGallery(sp, opts) {
 
 /* ---------- stats ---------- */
 function renderStats() {
-  const total = SPECIES_DATA.length;
-  const seen = Object.keys(progress.seen).length;
+  const active = activeSpecies();
+  const total = active.length;
+  const seen = active.filter((sp) => progress.seen[keyFor(sp)]).length;
   const acc = progress.totalAnswered ? Math.round((progress.totalCorrect / progress.totalAnswered) * 100) : 0;
 
-  const struggling = SPECIES_DATA
+  const struggling = active
     .map((sp) => ({ sp, wrong: progress.wrong[keyFor(sp)] || 0, correct: progress.correct[keyFor(sp)] || 0 }))
     .filter((x) => x.wrong > 0 && x.wrong >= x.correct)
     .sort((a, b) => b.wrong - a.wrong)
