@@ -290,6 +290,12 @@ main{ flex:1; padding:20px 18px 60px; }
 
 .section-title{ font-size:1.25rem; margin:4px 0 16px; color:var(--green-900); }
 
+.install-panel{ background:linear-gradient(135deg, var(--green-600), var(--green-700)); border:none; }
+.install-panel h4{ color:#eafbe0; }
+.install-panel p{ color:#eafbe0; margin:0 0 12px; font-size:.88rem; line-height:1.5; }
+.install-panel .btn-primary{ background:#fff; color:var(--green-700); width:100%; }
+.install-panel .btn-primary:hover{ background:#eafbe0; }
+
 .status-tag{
   display:inline-block; font-size:.72rem; font-weight:800; padding:3px 9px; border-radius:999px; margin:2px 0;
 }

@@ -23,6 +23,25 @@ const state = {
   answered: false,
 };
 
+/* ---------- installable app (PWA) ---------- */
+let deferredInstallPrompt = null;
+const isStandaloneApp = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+const isIOSDevice = /iphone|ipad|ipod/i.test(navigator.userAgent);
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredInstallPrompt = e;
+  if (state.view === "home") render();
+});
+window.addEventListener("appinstalled", () => {
+  deferredInstallPrompt = null;
+  showToast("Instal·lada! Ja la tens a la pantalla d'inici 🌿");
+});
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(() => { /* offline support just won't be available */ });
+  });
+}
+
 /* ---------- persistence ---------- */
 function loadProgress() {
   try {
@@ -162,6 +181,28 @@ function render() {
   window.scrollTo({ top: 0, behavior: "instant" in window ? "instant" : "auto" });
 }
 
+function renderInstallPanel() {
+  if (isStandaloneApp) return "";
+  if (deferredInstallPrompt) {
+    return `
+      <div class="filters-panel install-panel">
+        <h4>📲 Instal·la l'app</h4>
+        <p>Afegeix-la a la pantalla d'inici per obrir-la com una app, més ràpida i amb accés sense connexió.</p>
+        <button class="btn-primary" id="installBtn">Instal·la al mòbil</button>
+      </div>
+    `;
+  }
+  if (isIOSDevice) {
+    return `
+      <div class="filters-panel install-panel">
+        <h4>📲 Instal·la l'app a l'iPhone/iPad</h4>
+        <p>Prem <strong>Compartir</strong> ⬆️ a la barra de Safari i tria <strong>"Afegeix a la pantalla d'inici"</strong>.</p>
+      </div>
+    `;
+  }
+  return "";
+}
+
 function renderHome() {
   const active = activeSpecies();
   const totalSeen = active.filter((sp) => progress.seen[keyFor(sp)]).length;
@@ -173,6 +214,8 @@ function renderHome() {
       <h1 class="font-display">Coneixes la flora catalana? 🌱</h1>
       <p>Practica amb fotos reals i endevina quina planta és. Quatre opcions, feedback immediat i repàs de les que et costen més.</p>
     </section>
+
+    ${renderInstallPanel()}
 
     <div class="filters-panel">
       <h4>Origen de les espècies</h4>
@@ -229,6 +272,16 @@ function renderHome() {
       </p>
     </div>
   `;
+  const installBtn = document.getElementById("installBtn");
+  if (installBtn) {
+    installBtn.addEventListener("click", async () => {
+      if (!deferredInstallPrompt) return;
+      deferredInstallPrompt.prompt();
+      await deferredInstallPrompt.userChoice;
+      deferredInstallPrompt = null;
+      renderHome();
+    });
+  }
   main.querySelectorAll("[data-start]").forEach((btn) => {
     btn.addEventListener("click", () => startRound(btn.dataset.start));
   });

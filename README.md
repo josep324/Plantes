@@ -19,6 +19,18 @@ Obre `index.html` a un navegador (no cal cap instal·lació ni servidor).
 
 El progrés es desa al navegador (localStorage), no cal compte ni connexió a internet un cop carregada la pàgina.
 
+## Instal·lar-la al mòbil (PWA)
+
+L'app és una *Progressive Web App*: es pot instal·lar des del navegador com si fos una app nativa,
+amb icona a la pantalla d'inici i sense la barra d'adreces.
+
+- **Android/Chrome**: obre la web i prem el botó verd **"Instal·la al mòbil"** que apareix a l'inici
+  (o el menú ⋮ → "Instal·la l'aplicació").
+- **iPhone/iPad (Safari)**: prem **Compartir** ⬆️ → **"Afegeix a la pantalla d'inici"**.
+
+Un cop instal·lada, un service worker (`sw.js`) desa en caché l'aplicació i les fotos ja vistes,
+de manera que després del primer ús funciona també sense connexió.
+
 ## Dades
 
 Les 106 espècies (nom, nom científic, descripció, origen i totes les seves fotografies) provenen
@@ -35,3 +47,4 @@ Nil Escolà Lamora):
 - `assets/img/` — fotografies de les espècies autòctones.
 - `assets/img_exotiques/` — fotografies de les espècies exòtiques.
 - `assets/species.json` — mateixes dades en format JSON (font per regenerar `species_data.js`).
+- `manifest.json`, `sw.js`, `assets/icons/` — configuració PWA (instal·lable + funcionament offline).
